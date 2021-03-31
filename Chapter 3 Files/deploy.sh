@@ -596,7 +596,7 @@ if [ "$set_proxy" == "y" ]; then
    read -e -p "Enter proxy server IP address: " proxy_ip
    read -e -p "Enter proxy server port: "  proxy_port
    echo -e "\e[32m[x]\e[0m Setting proxy details http://$proxy_ip:$proxy_port in file /etc/systemd/system/docker.service.d2/http-proxy.conf"
-   mkdir -p /etc/systemd/system/docker.service.d
+   sudo mkdir -p /etc/systemd/system/docker.service.d
    sudo cat > /etc/systemd/system/docker.service.d/http-proxy.conf <<PROXY_EOF
 [Service]
 Environment="HTTP_PROXY=http://$proxy_ip:$proxy_port"
